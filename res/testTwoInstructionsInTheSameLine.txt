@@ -1,0 +1,19 @@
+testTwoInstructionsInTheSameLine
+Send request [00 AB A5] in [functional] addressing mode
+Send request to read did ECU_Serial_Number
+Check signal [RM_LDS_AS_1] is [equal] to [0]
+Check signal [RM_LDS_AS_1] is [equal] to [0]
+Send request [33 33 33 ]
+Set signal LSD_1 to 1 
+Set Signal [LDS_AS_1] Pause [2] ms 
+
+testSetEmptyInstruction
+Send request [00 AB A5] in [functional] addressing mode
+Send request to read did ECU_Serial_Number
+Check signal [RM_LDS_AS_1] is [equal] to [0.0]
+Send request [33 33 33 ]
+Set signal LSD_1 to 1 
+Set Signal [LDS_AS_1] 
+Pause [2] ms 
+Set              
+Pause [0] ms 
