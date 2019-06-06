@@ -195,13 +195,35 @@ CAPL - процедурный язык, на котором выполнение блоков программы управляются собы
 С помощью CAPL можно описать тесты, полностью покрывающие функциональные требования АС. Однако данный язык является Си подобным, достаточно трудным для понимания менеджерами и аналитиками.
 
 
-  \item CCDL
+
+\item CCDL
   
 Еще одним языком для описания тестовых спецификаций в автомобильной сфере является CCDL. Это язык тестовых спецификаций для тестирования, основанном на требованиях. Предоставляет высокоуровневый язык тестирования. CCDL может использоваться для автоматизированного black box тестирования. Однако, спецификации содержат в себе программный код, непонятный для части бизнес участников. 
+
+\begin{figure}[h]
+\center{\includegraphics[width=\linewidth]{res/CAPL-EX}}
+\caption{Тестовый сценарий на языке CCDL}
+\label{fig:image}
+\end{figure}
+
 
 \item Cucumber
 
 Cucumber – это фреймворк, реализующий подход BDD. В Cucumber для разработки тестов используется Gherkin-нотация. Она определяет набор ключевых слов и структуру теста. Программная реализация шагов отделена от теста, что очень удобно для бизнеса. Однако для создания полной domain specific модели АС необходимо каждый раз заново реализовывать протокол коммуникации с тестовым оборудованием. 
+
+\begin{figure}[h]
+\center{\includegraphics[width=\linewidth]{res/CUCUMBER-EX-1}}
+\caption{Тестовая спецификация Cucumber}
+\label{fig:image}
+\end{figure}
+
+\begin{figure}[h]
+\center{\includegraphics[width=\linewidth]{res/CUCUMBER-EX-2}}
+\caption{Реализация шага Cucumber}
+\label{fig:image}
+\end{figure}
+
+
 \end{itemize}
 
 \subsection{Результаты}
@@ -508,9 +530,9 @@ TODO: add more info about defferent exceptions
 
 Для тестирования реализованного языка были разработа Unit тесты. Модульное тестирование, оно же юнит-тестирование, позволяет проверить корректность отдельных модулей исходного кода программы. 
 
-\lstinputlisting[caption=входные данные для теста testTwoInstructionsInTheSameLine, language=java,  firstline=2,  lastline=8 ]{res/testTwoInstructionsInTheSameLine.txt}
+\lstinputlisting[caption=входные данные для теста testTwoInstructionsInTheSameLine, language=java,  firstline=2,  lastline=9 ]{res/testTwoInstructionsInTheSameLine.txt}
 
-\lstinputlisting[caption=входные данные для теста testSetEmptyInstruction, language=java,  firstline=11,  lastline=19 ]{res/testTwoInstructionsInTheSameLine.txt}
+\lstinputlisting[caption=входные данные для теста testSetEmptyInstruction, language=java,  firstline=13,  lastline=22 ]{res/testTwoInstructionsInTheSameLine.txt}
 
 
 Ниже представлена спецификация для разработанного синтаксического анализатора и результаты выполнения тестов
