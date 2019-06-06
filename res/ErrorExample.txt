@@ -1,0 +1,24 @@
+@TestCase 1
+@Send request [00 AB A5] in [functional] addressing mode
+@Send request to read did ECU_Serial_Number
+@Check signal [RM_LDS_AS_1] is [equal] to [0.0]
+@Send request [33 33 33 ]
+@Set signal LSD_1 to 1
+@Set Signal [LDS_AS_1]
+@Pause [2] ms
+@Set
+@Pause [0] ms
+
+
+Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException: line 1:9 mismatched input ' 1' expecting '['
+	at main.compiler.exceptions.ThrowingErrorListener.syntaxError(ThrowingErrorListener.java:15)
+	at org.antlr.v4.runtime.ProxyErrorListener.syntaxError(ProxyErrorListener.java:41)
+	at org.antlr.v4.runtime.Parser.notifyErrorListeners(Parser.java:544)
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportInputMismatch(DefaultErrorStrategy.java:327)
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportError(DefaultErrorStrategy.java:139)
+	at main.bdd.antlr.BddParser.time(BddParser.java:576)
+	at main.bdd.antlr.BddParser.testcase(BddParser.java:201)
+	at main.bdd.antlr.BddParser.specification(BddParser.java:140)
+	at main.compiler.MyCompiler.parse(MyCompiler.java:48)
+	at main.compiler.MyCompiler.parseFromFileName(MyCompiler.java:26)
+	at main.examples.main.main(main.java:17)
