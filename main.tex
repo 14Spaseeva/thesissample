@@ -513,7 +513,17 @@ BddParserVisitor.java, BddParserListener.java, BddParserBaseListener   — это инт
 \lstinputlisting[caption=Пример тестового сценария с синтаксической ошибкой, language=java,  firstline=1,  lastline=10 ]{res/ErrorExample.txt}
 
 
-\lstinputlisting[caption=Результат работы интерпретатора для тестового сценария с синтаксической ошибкой, language=java,  firstline=13,  lastline=24 ]{res/ErrorExample.txt}
+\lstinputlisting[caption=Результат работы интерпретатора для тестового сценария с синтаксической ошибкой, language=java,  firstline=13,  lastline=14]{res/ErrorExample.txt}
+
+
+В случае, если на вход подается тестовая спецификация, в окторой указана инструкция, не объявленая в пользовательской библиотеке команд, возникает исключение UndefinedInstructionException, сообщающее какая именно инструкция была неопределена.
+
+\lstinputlisting[caption=Пример тестового сценария необъявленной инструкцией, language=java,  firstline=18,  lastline=20 ]{res/ErrorExample.txt}
+
+
+\lstinputlisting[caption=Результат работы интерпретатора для тестового сценария с необъявленной инструкцией, language=java,  firstline=22,  lastline=23]{res/ErrorExample.txt}
+
+
 
 TODO: add more info about defferent exceptions
 

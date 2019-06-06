@@ -1,4 +1,4 @@
-@TestCase 1
+@TestCase [1]
 @Send request [00 AB A5] in [functional] addressing mode
 @Send request to read did ECU_Serial_Number
 @Check signal [RM_LDS_AS_1] is [equal] to [0.0]
@@ -11,4 +11,13 @@
 
 
 Error in the Specification example.cc: 
-line 1:9 mismatched input ' 1' expecting '['
+line 9:4 missing TEXT at '\r\n'
+
+
+
+@TestCase [1]
+@Send request [00 AB A5] in [functional] addressing mode
+@Send request [00 AB A5] in functional addressing mode
+
+Error in the Specification example.cc: 
+Instruction 'request [] in functional addressing mode' is undefined in the lib 'CommandLib'
