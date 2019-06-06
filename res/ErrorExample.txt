@@ -10,15 +10,5 @@
 @Pause [0] ms
 
 
-Exception in thread "main" org.antlr.v4.runtime.misc.ParseCancellationException: line 1:9 mismatched input ' 1' expecting '['
-	at main.compiler.exceptions.ThrowingErrorListener.syntaxError(ThrowingErrorListener.java:15)
-	at org.antlr.v4.runtime.ProxyErrorListener.syntaxError(ProxyErrorListener.java:41)
-	at org.antlr.v4.runtime.Parser.notifyErrorListeners(Parser.java:544)
-	at org.antlr.v4.runtime.DefaultErrorStrategy.reportInputMismatch(DefaultErrorStrategy.java:327)
-	at org.antlr.v4.runtime.DefaultErrorStrategy.reportError(DefaultErrorStrategy.java:139)
-	at main.bdd.antlr.BddParser.time(BddParser.java:576)
-	at main.bdd.antlr.BddParser.testcase(BddParser.java:201)
-	at main.bdd.antlr.BddParser.specification(BddParser.java:140)
-	at main.compiler.MyCompiler.parse(MyCompiler.java:48)
-	at main.compiler.MyCompiler.parseFromFileName(MyCompiler.java:26)
-	at main.examples.main.main(main.java:17)
+Error in the Specification example.cc: 
+line 1:9 mismatched input ' 1' expecting '['
