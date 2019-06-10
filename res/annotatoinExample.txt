@@ -1,0 +1,4 @@
+@Send(text = "request [p1] in [p2] addressing mode")
+public void sendRequest(String p1, AddressingMode p2){
+    //do something
+}
