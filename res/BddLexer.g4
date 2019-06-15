@@ -4,9 +4,14 @@ WS  :('\t'|' ')+ ->  skip;
 
 NEWLINE :[\r|\n]+;
 
-INTEGER : DIGIT+ ;
-fragment DIGIT: ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9');
 
+fragment DIGIT	
+	: [0-9];
+INTEGER 
+	: DIGIT+ ;
+Pause
+    : DOG [Pp][a][u][s][e]
+    ;
 
 fragment SYMB_NOT_DIGIT:
      ~(':'|'['|']'|'\r'|'\n' |'@' | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9')
@@ -18,7 +23,8 @@ fragment StartText1 : Stsrt;
 
 TEXT:     ((StartText1 *? INTEGER) |  StartText1) +;
 
-
+fragment DOG
+	: '@';
 Send
     : DOG [Ss][e][n][d]
     ;
@@ -31,9 +37,7 @@ Set
 Check
     : DOG [Cc][h][e][c][k]
     ;
-Pause
-    : DOG [Pp][a][u][s][e]
-    ;
+
 
 TestCase
     :
@@ -48,7 +52,7 @@ RBRACKET
 MS : 'ms';
 SEC: 'sec';
 
-fragment DOG: '@';
+
 
 
 
