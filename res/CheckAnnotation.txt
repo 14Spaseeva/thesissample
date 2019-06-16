@@ -1,0 +1,12 @@
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface Check {
+    String text();
+
+}
+
+@Send(text = "request [req]")
+public void sendRequest(String req) {
+    //do something to send request
+	
+}
