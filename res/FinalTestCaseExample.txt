@@ -1,0 +1,10 @@
+@TestCase testing NVRAM functionallity of did 0xF101
+@Set ignition on,
+@Send request [2E F1 01 00 01 A5],
+@Recieve response [6E F1 01],
+@Set ignition off,
+@Set ignition on,
+@Send request [22 F1 01],
+@Pause 100 ms,
+@Recieve response [62 F1 01 00 01 A5],
+@Set ignition off.
