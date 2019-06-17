@@ -686,17 +686,8 @@ fragment S: [sS];
 
 Абстрактное синтаксическое дерево построенное для примера тестовой  вышеописанным правилам синтаксического анализа тестовый сценарий
 
-Из вышеописанных синтаксических правил пример тестовой спецификации для тестирования функции записи данных в энергонезависимую память будет выглядеть следующим образом:
-\\\textbf{@TestCase} testing NVRAM functionallity of did 0xF101
-\\\textbf{@Set} ignition on,
-\\\textbf{@Send} request [22 F1 01 00 01 A5],
-\\\textbf{@Recieve} response [62 F1 01],
-\\\textbf{@Set} ignition off,
-\\\textbf{@Set} ignition on,
-\\\textbf{@Send} request [2E F1 01],
-\\\textbf{@Pause} 100 ms,
-\\\textbf{@Recieve} response [6E F1 01 00 01 A5],
-\\\textbf{@Set} ignition off.
+Из вышеописанных синтаксических правил пример тестовой спецификации для тестирования функции записи данных в энергонезависимую память представлен в линстинге \ref{lst:ExampleForAST}.
+\lstinputlisting[caption= Пример тестового сценария,language=java,  firstline=1,      lastline=15 , label={lst:ExampleForAST}]{res/FinalTestCaseExample.txt}
 
 На рисунке \ref{fAST} проиллюстрировано абстрактное синтаксическое дерево для правила \textbf{specification}.
 \begin{Figure}[h!]{Пример AST тестовой спецификации}{fAST}

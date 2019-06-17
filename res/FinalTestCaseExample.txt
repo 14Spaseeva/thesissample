@@ -1,10 +1,29 @@
-@TestCase testing NVRAM functionallity of did 0xF101
-@Set ignition on,
-@Send request [2E F1 01 00 01 A5],
-@Recieve response [6E F1 01],
-@Set ignition off,
-@Set ignition on,
-@Send request [22 F1 01],
-@Pause 100 ms,
-@Recieve response [62 F1 01 00 01 A5],
-@Set ignition off.
+@TestCase test NVRAM functionallity of did 0xF101
+(Req_NVRAM1)
+
+@Set ignition on
+@Send request [2E F1 01 00 01 A5]
+@Recieve response [6E F1 01]
+@Set ignition off
+
+@Set ignition on
+@Repeat[2][
+    @Send request [22 F1 01]
+    @Pause [100] ms
+    @Recieve response [62 F1 01 00 01 A5]
+]
+@Set ignition off
+
+
+@TestCase testing NVRAM functionallity of did 0xF102 (Req_NVRAM2)
+
+@Set ignition on
+@Send request [2E F1 02 01]
+@Recieve response [6E F1 02]
+@Set ignition off
+
+@Set ignition on
+@Send request [22 F1 02]
+@Pause [100] ms
+@Recieve response [62 F1 02 01]
+@Set ignition off

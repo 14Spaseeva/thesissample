@@ -1,41 +1,52 @@
 parser grammar BddParser;
 
-options { tokenVocab=BddLexer; }
+options { tokenVocab=BddLexer;
+}
 
 specification
     : testcases = testcase+ EOF;
 
-testcase
-	: TestCase TEXT eoi scenario ;
+testcase: TestCase TEXT NEWLINE scenario ;
 
 scenario
-    : instructions = instruction (eoi instruction)* eoi*
+    :instr
+    |left = scenario instr //right = instr
+    ;
+
+instr
+    :
+    instruction NEWLINE
     ;
 
 instruction
-    : Send  annotationText     #send
-    | Receive annotationText   #recieve
-    | Set annotationText       #set
-    | Check annotationText     #check
-    | Pause time  TEXT?        #pause
+    : Send  instrText     #send
+    | Receive instrText   #recieve
+    | Set instrText       #set
+    | Check instrText     #check
+    | Pause time  TEXT?   #pause
     ;
 
 time
     : LBRACKET value=INTEGER RBRACKET
     ;
 
-customParameter
-    : LBRACKET (paramText = (INTEGER| TEXT))? RBRACKET
+customParam
+    : LBRACKET param RBRACKET
     ;
 
+param
+    :(INTEGER| TEXT)?
+    ;
 
-annotationText
+instrText
     : text
     ;
 
 text
-    : left = text customParameter (right = TEXT)? #lr
-    | TEXT                                    #phrase
+    :TEXT
+    |left = text customParam (right = text)?
     ;
 
-eoi : NEWLINE;
+
+
+
