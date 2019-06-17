@@ -1,8 +1,12 @@
 lexer grammar BddLexer;
 
-WS  :('\t'|' ')+ ->  skip;
+WS
+    :('\t'|' ')+ ->  channel(HIDDEN)
+    ;
 
-NEWLINE :[\r|\n]+;
+NEWLINE :
+    [\r|\n]+ -> channel(HIDDEN)
+    ;
 
 INTEGER : DIGIT+ ;
 fragment DIGIT: ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9');
@@ -19,7 +23,9 @@ fragment StartText1 : Stsrt;
 TEXT:     ((StartText1 *? INTEGER) |  StartText1) +;
 
 fragment DOG: '@';
-
+Repeat
+    : DOG [Rr][e][p][e][a][t]
+    ;
 Send
     : DOG [Ss][e][n][d]
     ;
@@ -45,7 +51,4 @@ LBRACKET
     : '[' ;
 RBRACKET
     : ']' ;
-
-
-
 

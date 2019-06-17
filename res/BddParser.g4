@@ -6,17 +6,13 @@ options { tokenVocab=BddLexer;
 specification
     : testcases = testcase+ EOF;
 
-testcase: TestCase TEXT NEWLINE scenario ;
+testcase: TestCase TEXT scenario ;
 
 scenario
-    :instr
-    |left = scenario instr //right = instr
+    :(repeatPart|instruction)
+    |left = scenario scenario
     ;
 
-instr
-    :
-    instruction NEWLINE
-    ;
 
 instruction
     : Send  instrText     #send
@@ -24,6 +20,10 @@ instruction
     | Set instrText       #set
     | Check instrText     #check
     | Pause time  TEXT?   #pause
+    ;
+
+repeatPart
+    : Repeat time LBRACKET repeatScen=scenario RBRACKET
     ;
 
 time
