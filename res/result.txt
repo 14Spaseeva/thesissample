@@ -1,3 +1,4 @@
+TestCase test NVRAM functionality of did 0xF101 (Req_NVRAM1)
 [6E F1 01] SUCCESS
 [62 F1 01 00 01 A5] FAILED: [7F 22 31]
 [62 F1 01 00 01 A5] FAILED: [7F 22 31]
