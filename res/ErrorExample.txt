@@ -20,4 +20,5 @@ line 9:4 missing TEXT at '\r\n'
 @Send request [00 AB A5] in functional addressing mode
 
 Error in the Specification example.cc: 
-Instruction 'request [] in functional addressing mode' is undefined in the lib 'CommandLib'
+Instruction 'request [] in functional addressing mode' 
+is undefined in the lib 'CommandLib'

@@ -1,4 +1,4 @@
-@TestCase test NVRAM functionallity of did 0xF101
+@TestCase test NVRAM functionality of did 0xF101
 (Req_NVRAM1)
 
 @Set ignition on

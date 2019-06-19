@@ -20,14 +20,14 @@ public class CommandLib extends CommandLibable {
     }
 
 
-    @Send(text = "request [param1]")
-    public void sendRequest(String param1) {
-        xlFrTransmit(HexUtil.fromStringtoHexArray(param1));
-    }
+@Send(text = "request [param1]")
+public void sendRequest(String param1) {
+    xlFrTransmit(HexUtil.fromStringtoHexArray(param1));
+}
 
-    @Recieve(text = "response [param1]")
-    public void recieveResponse(String param1) {
-        xlFrReceive(HexUtil.fromStringtoHexArray(param1));
-    }
+@Recieve(text = "response [param1]")
+public void recieveResponse(String param1) {
+    xlFrReceive(HexUtil.fromStringtoHexArray(param1));
+}
 
 }
